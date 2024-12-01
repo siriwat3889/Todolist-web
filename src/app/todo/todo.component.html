@@ -9,6 +9,7 @@
           placeholder="สิ่งที่จะทำ"
           [(ngModel)]="newTodo"
         />
+
         <button
           class="btn join-item rounded-full btn-primary hover:btn text-info-content hover:rounded-full"
           (click)="addTodo()"
@@ -24,8 +25,8 @@
       *ngFor="let todo of todos; let i = index"
     >
       <div class="card-body">
-        <h2 class="card-title text-orange-600">สิ่งที่ต้องทำ</h2>
-        <span class="text-orange-500">{{ todo }}</span>
+        <h2 class="card-title text-orange-600">{{ todo.name }}</h2>
+        <span class="text-orange-500">{{ todo.todo }}</span>
         <div class="card-actions justify-end">
           <button class="btn btn-primary" (click)="deleteTodo(i)">ลบ</button>
         </div>

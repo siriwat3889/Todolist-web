@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { TodoModel } from './todo-model';
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   imports: [FormsModule, CommonModule],
 })
 export class TodoComponent {
-  todos: string[] = [];
+  todos: TodoModel[] = [];
   newTodo: string = '';
 
   ngOnInit() {
@@ -18,7 +18,13 @@ export class TodoComponent {
   }
   addTodo() {
     if (this.newTodo.trim()) {
-      this.todos.push(this.newTodo);
+      const data = {
+        id: this.todos.length + 1,
+        name: 'todo',
+        todo: this.newTodo,
+        isDone: false,
+      };
+      this.todos.push(data);
       this.newTodo = '';
     }
     this.setItem();
