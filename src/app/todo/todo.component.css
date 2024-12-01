@@ -1,0 +1,8 @@
+.list-group-item {
+  cursor: pointer;
+}
+
+.text-decoration-line-through {
+  color: gray;
+  font-style: italic;
+}

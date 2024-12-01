@@ -1,0 +1,65 @@
+<div class="bg-neutral-content min-h-screen mt-10">
+  <div class="text-center w-full">
+    <div class="w-full flex flex-col items-center gap-4">
+      <h1 class="text-5xl font-bold text-info-content">Todo-List</h1>
+      <div class="join">
+        <input
+          type="text"
+          class="input input-bordered join-item text-orange-600 bg-secondary-content placeholder-orange-600"
+          placeholder="สิ่งที่จะทำ"
+          [(ngModel)]="newTodo"
+        />
+        <button
+          class="btn join-item rounded-full btn-primary hover:btn text-info-content hover:rounded-full"
+          (click)="addTodo()"
+        >
+          Add Todo-List
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-wrap justify-center gap-4 m-3">
+    <div
+      class="card bg-base-200 w-96 shadow-xl"
+      *ngFor="let todo of todos; let i = index"
+    >
+      <div class="card-body">
+        <h2 class="card-title text-orange-600">สิ่งที่ต้องทำ</h2>
+        <span class="text-orange-500">{{ todo }}</span>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary" (click)="deleteTodo(i)">ลบ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="max-w-md mx-auto p-4">
+  <h2 class="text-2xl font-bold text-center mb-4">To-Do List</h2>
+  <div class="flex mb-4">
+    <input
+      [(ngModel)]="newTodo"
+      type="text"
+      placeholder="เพิ่มงานใหม่"
+      class="border rounded-l-md p-2 w-full"
+    />
+    <button
+      (click)="addTodo()"
+      class="bg-blue-500 text-white rounded-r-md px-4"
+    >
+      เพิ่ม
+    </button>
+  </div>
+  <div class="flex"></div>
+  <ul class="list-none">
+    <li
+      *ngFor="let todo of todos; let i = index"
+      class="flex justify-between items-center mb-2 p-2 border-b"
+    >
+      <div class="flex flex-wrap">
+        <span>{{ todo }}</span>
+      </div>
+      <button (click)="deleteTodo(i)" class="text-red-500">ลบ</button>
+    </li>
+  </ul>
+</div> -->
